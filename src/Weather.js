@@ -4,55 +4,55 @@ import "./Weather.css";
 export default function Weather() {
 return (
   <div className="Weather"> 
-    <div className="weather-side">
+    <div className="weather-side" >
 
-      <img className="back"
-        src="https://images.unsplash.com/photo-1496023328036-6792ef27a543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-        alt="cloudyBeach" 
-        />
-
-      <div className="weather-side-container" id="weather-side-container">
-        <div className="date-container" id="date-container">
+        <div className="date-container">
           <span className="date" >
             <h2 className="date-dayname" id="day-time">Tuesday</h2>
             <div className="date-day" id="day">12 Sept 2020</div>
           </span>
 
           <h6 className="location">
-            <i className="fas fa-map-marker-alt" id="location-img">
-            </i>
+            <img className="resize" 
+                  src="https://img.icons8.com/material-sharp/24/ffffff/marker.png"
+                  id="location-img" 
+                  alt="current location"
+          />
             <span className="city" id="city">
               Montreal
-            </span> ,
+            </span> , &nbsp; 
             <span className="country" id="country-input">
               CA
             </span>
           </h6>
         </div>
-      </div>
-    </div>
+
 
       <div className="weather-container">
         <div className="weather-icon">
-              <img src="" alt="clear" id="icon" width="100px" float="left" />
+          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="rain" id="icon" width="125px" float="left" />
         </div>
-            <h1 className="weather-temp">
-              <span id="temperature">
+        <div className ="weather-temp-container">
+             <h1 className="weather-temp">
+              <span id="temperature" > 10°
               </span>
               <span className="alternate" id="alternate"><a href="#" id="celsiusLink" className="active">°C</a> |
                 <a href="#" id="fahrenheitLink">°F
                 </a></span>
             </h1>
-              <h3 className="weather-description" id="description"><firstletter>S</firstletter>unny
-            </h3>  
+              <h3 className="weather-description">Sunny
+            </h3>
+          </div>  
       </div>
+    </div>
+
       
     <div className="info-side">
       
         <div className="info-container">
           <div className="list">
             <span className="title"> MIN. TEMP </span>
-            <span className="value" id="minimum">
+            <span className="value" id="minimum" >
               12
             <span> °C </span>
             </span>
