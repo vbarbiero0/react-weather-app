@@ -50,44 +50,60 @@ return (
     <div className="info-side">
       
         <div className="info-container">
-          <div className="list">
-            <span className="title"> MIN. TEMP </span>
-            <span className="value" id="minimum" >
-              12
-            <span> °C </span>
-            </span>
-          </div>
+          <div className="today-info">
+            <div className="list">
+              <span className="title"> MIN. TEMP </span>
+              <span className="value" id="minimum" >
+               12
+              <span> °C </span>
+              </span>
+            </div>
 
-          <div className="list">
-            <span className="title"> HUMIDITY </span>
-            <span className="value" id="humidity">
-               34  
-            <span> % </span>
-            </span>
-          </div>
+            <div className="list">
+              <span className="title"> HUMIDITY </span>
+              <span className="value" id="humidity">
+                 34  
+              <span> % </span>
+              </span>
+            </div>
 
-          <div className="list">
-            <span className="title"> WIND </span>
-            <span className="value" id="wind">
-               0 
-            </span>
-            <span> km/h </span>
-          </div>
-        </div>
+            <div className="list">
+              <span className="title"> WIND </span>
+              <span className="value" id="wind">
+                 0 
+                 <span> km/h </span>
+              </span>
+            </div>
+          
+        
 
         <div className="week-container">
-          <div className="row" id="forecast" >
-            <div className="col-3" id="col-3" >
-              <div className="day-time" id="day-time">
-                12:00
-              </div>
+          <ul className="week-list">
+            <li className="week-active">
               <img className="day-icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="clear" id="day-icon" 
               />
-              <div id="day-temp">
-                14°C
-              </div>
-          </div>
-        </div>
+              <span className="day-time">12:00</span> 
+              <span className="day-temp">14°C</span> 
+            </li>
+            <li className="week">
+              <img className="day-icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="clear" id="day-icon" 
+              />
+              <span className="day-time">12:00</span> 
+              <span className="day-temp">14°C</span> 
+            </li>
+            <li className="week">
+              <img className="day-icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="clear" id="day-icon" 
+              />
+              <span className="day-time">12:00</span> 
+              <span className="day-temp">14°C</span> 
+            </li>
+            <li className="week">
+              <img className="day-icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="clear" id="day-icon" 
+              />
+              <span className="day-time">12:00</span> 
+              <span className="day-temp">14°C</span> 
+            </li>
+        </ul>
       </div>
 
         <div className="row" id="search-location">
@@ -111,9 +127,12 @@ return (
               id="current-location-icon" />
             </button>
           </div>
+          </div>
         </div>
+      </div>
     </div>
   </div>
+
 
 )
 
