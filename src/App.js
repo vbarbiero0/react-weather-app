@@ -7,7 +7,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         
-          <Weather />
+          <Weather defaultCity="Milan" />
        
       <footer>
         This project was coded by Vanessa Barbiero and is{" "}
