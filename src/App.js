@@ -12,7 +12,7 @@ export default function App() {
       <footer>
         This project was coded by Vanessa Barbiero and is{" "}
       <a href="https://github.com/vbarbiero0/react-weather-app"
-      target="_blank">
+      target="_blank" rel="noreferrer">
          open-sourced on Github
       </a>
       </footer>
