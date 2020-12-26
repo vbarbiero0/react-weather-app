@@ -1,24 +1,25 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState ({ ready: false});
-  
-  function handleResponse(response) {
 
-    console.log(response.data);
+
+  function handleResponse(response) {
+    
     setWeatherData({
-      ready:true,
-      temperature: Math.round(response.data.list[0].main.temp),
-      city: response.data.city.name,
-      country: response.data.city.country,
-      wind: response.data.list[0].wind.speed,
-      humidity: Math.round(response.data.list[0].main.humidity),
-      feels: Math.round(response.data.list[0].main.feels_like),
-      description: response.data.list[0].weather[0].description,
+      ready: true,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
+      city: response.data.name,
       iconUrl: "http://openweathermap.org/img/wn/10d@2x.png",
-      date: "25 Dec 2020",
+      country: response.data.sys.country,
     });
   }
 
@@ -29,11 +30,9 @@ export default function Weather(props) {
     <div className="weather-side" >
 
         <div className="date-container">
-          <span className="date" >
-            <h2 className="date-dayname" id="day-time">Tuesday</h2>
-            <div className="date-day" id="day">{weatherData.date}</div>
-          </span>
-
+          
+              <FormattedDate date={weatherData.date} />
+            
           <h6 className="location">
             <img className="resize" 
                   src="https://img.icons8.com/material-sharp/24/ffffff/marker.png"
@@ -59,8 +58,8 @@ export default function Weather(props) {
               <span id="temperature" > {Math.round(weatherData.temperature)}°
               </span>
               &nbsp;
-              <span className="alternate" id="alternate"><a href="https://openweathermap.org/forecast5#list" id="celsiusLink" className="active">°C</a> |
-                <a href="https://openweathermap.org/forecast5#list" id="fahrenheitLink">°F
+              <span className="alternate" id="alternate"><a href="https://openweathermap.org/api" id="celsiusLink" className="active">°C</a> |
+                <a href="https://openweathermap.org/api" id="fahrenheitLink">°F
                 </a></span>
             </h1>
               <h3 className="weather-description">{weatherData.description}
@@ -76,7 +75,7 @@ export default function Weather(props) {
           <div className="today-info">
             <div className="list">
               <span className="title"> FEELS LIKE </span>
-              <span className="value" id="precipitation" >
+              <span className="value">
                {weatherData.feels}
               <span> °C </span>
               </span>
@@ -84,7 +83,7 @@ export default function Weather(props) {
 
             <div className="list">
               <span className="title"> HUMIDITY </span>
-              <span className="value" id="humidity">
+              <span className="value">
                  {weatherData.humidity}  
               <span> % </span>
               </span>
@@ -92,7 +91,7 @@ export default function Weather(props) {
 
             <div className="list">
               <span className="title"> WIND </span>
-              <span className="value" id="wind">
+              <span className="value">
                  {weatherData.wind} 
                  <span> km/h </span>
               </span>
@@ -157,9 +156,10 @@ export default function Weather(props) {
 } else {
 
   const apiKey = "45e0d74a1bc7be61b894ed215a9def13";
-  let apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+  let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(handleResponse);
-
+  console.log(apiUrl);
+  
   return (
     
     <h1>Loading...</h1>
