@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import "./Weather.css";
+
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState ({ ready: false});
@@ -19,7 +21,6 @@ export default function Weather(props) {
       icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       city: response.data.name,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       country: response.data.sys.country,
     });
   }
@@ -28,7 +29,7 @@ export default function Weather(props) {
     const apiKey = "45e0d74a1bc7be61b894ed215a9def13";
     let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
-    console.log(apiUrl);
+   
   }
 
 
@@ -77,35 +78,10 @@ export default function Weather(props) {
             </div>
          </div> 
         
-
-        <div className="week-container">
-          <ul className="week-list">
-            <li className="week">
-              <img className="day-icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="clear" id="day-icon" 
-              />
-              <span className="day-time">12:00</span> 
-              <span className="day-temp">14°C</span> 
-            </li>
-            <li className="week">
-              <img className="day-icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="clear" id="day-icon" 
-              />
-              <span className="day-time">12:00</span> 
-              <span className="day-temp">14°C</span> 
-            </li>
-            <li className="week">
-              <img className="day-icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="clear" id="day-icon" 
-              />
-              <span className="day-time">12:00</span> 
-              <span className="day-temp">14°C</span> 
-            </li>
-            <li className="week">
-              <img className="day-icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="clear" id="day-icon" 
-              />
-              <span className="day-time">12:00</span> 
-              <span className="day-temp">14°C</span> 
-            </li>
-        </ul>
-      </div>
+        
+        <WeatherForecast city={weatherData.city}/>
+          
+   
      
         <div className="search-location">
             <form className="form-horizontal" onSubmit={handleSubmit}>
