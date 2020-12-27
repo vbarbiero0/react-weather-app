@@ -226,6 +226,8 @@ input {
   font-size: 17px;
   color: white;
   outline: none !important;
+  font-weight: 600;
+  text-align: center;
 }
 
 button {
@@ -240,9 +242,9 @@ button {
 
 ::placeholder {
   color: white;
-  
+  text-align: center;
   opacity: 1;
-  
+  font-weight: 600;
 }
 
 button:hover {
