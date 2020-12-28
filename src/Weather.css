@@ -52,8 +52,10 @@
   bottom: 0;
 }
 
-.weather-icon {
+.weather-icon canvas {
   
+  width: 80px;
+  height: 80px;
   margin-left: 25px;
   margin-bottom: 20px;
 }
