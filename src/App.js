@@ -10,6 +10,13 @@ export default function App() {
           <Weather defaultCity="Montreal" />
        
       </div>
+      <footer>
+        This project was coded by Vanessa Barbiero and is{" "}
+      <a href="https://github.com/vbarbiero0/react-weather-app"
+      target="_blank" rel="noreferrer">
+         open-sourced on Github
+      </a>
+      </footer>
     </div>
   );
 }
