@@ -20,16 +20,16 @@ export default function WeatherForecast(props){
       <div className="week-container">
         <ul className="week-list">
           <li className="week">
-        <WeatherForecastPreview data={forecast.list[0]} />
+        <WeatherForecastPreview data={forecast.list[5]} />
           </li>
         <li className="week">
-        <WeatherForecastPreview data={forecast.list[4]} />
+        <WeatherForecastPreview data={forecast.list[14]} />
           </li>
         <li className="week">
-        <WeatherForecastPreview data={forecast.list[12]} />
+        <WeatherForecastPreview data={forecast.list[22]} />
           </li>
         <li className="week">
-        <WeatherForecastPreview data={forecast.list[20]} />
+        <WeatherForecastPreview data={forecast.list[28]} />
           </li>
        
         </ul>

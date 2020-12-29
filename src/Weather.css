@@ -139,10 +139,11 @@ a:hover {
   list-style-type: none;
   padding: 0;
   margin: 30px 25px 25px 22px;
-  width: 275px;
+  width: 300px;
 	-webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
 	        box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
-	border-radius: 10px;
+  border-radius: 10px;
+  margin-left: 11px;
 }
 
 
@@ -150,7 +151,7 @@ a:hover {
   display: inline-block;
   margin: 0 auto;
   cursor: pointer;
-  padding: 14px;
+  padding: 17px;
 	-webkit-transition: 200ms ease;
 	-o-transition: 200ms ease;
 	transition: 200ms ease;
